@@ -9,7 +9,10 @@ package 'httpd' do
 end
 
 file '/var/www/html/index.html' do
-  content '<h1>Welcome to Apache</h1>'
+  content "<h1>Welcome to Apache</h1>
+		<br>
+		<h2>#{node['ipaddress']}</h2>
+	  "
 end
 
 service 'httpd' do
