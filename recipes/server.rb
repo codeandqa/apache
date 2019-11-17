@@ -11,8 +11,10 @@ end
 file '/var/www/html/index.html' do
   content "<h1>Welcome to Apache</h1>
 		<br>
-		<h2>#{node['ipaddress']}</h2>
-	  "
+    <h2>#{node['ipaddress']}</h2>
+    <h2>#{node['hostname']}</h2>
+    "
+  action :create  
 end
 
 service 'httpd' do
